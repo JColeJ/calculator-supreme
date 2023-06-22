@@ -11,11 +11,11 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/JColeJ/calculator-supreme"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          GitHub Project
         </a>
       </header>
     </div>
