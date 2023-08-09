@@ -1,4 +1,5 @@
 import logo from './calculator-logo.png';
+import Calculator from './Calculator';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         >
           GitHub Project
         </a>
+        <Calculator />
       </header>
     </div>
   );
