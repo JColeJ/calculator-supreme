@@ -1,46 +1,51 @@
-
+import { useState } from "react";
 import './Calculator.css';
 
 //TODO: Try to add additional rows to make this look like the calculator from Microsoft
 
 function Calculator() {
-  return (
-      <table>
-        <tr aria-colspan={4}>
-            0
-        </tr>
 
-        <tr>
-          <td><div>AC</div></td>
-          <td><div>CE</div></td>
-          <td><div>%</div></td>
-          <td><div>del</div></td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>x</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>+</td>
-        </tr>
-        <tr>
-          <td>0</td>
-          <td>.</td>
-          <td>=</td>
-          <td></td>
-        </tr>
-      </table>
+  var [result, setResult] = useState(0);
+  var [input, setInput] = useState("");
+  var [formulae, setFormulae] = useState([]);
+
+  return (
+    <table>
+      <tr aria-colspan={4}>
+        <td colSpan={4} style={{ textAlign: 'right' }}>{result}</td>
+      </tr>
+
+      <tr>
+        <td><button onClick={() => setResult(0)}>AC</button></td>
+        <td><button onClick={() => setResult(0)}>CE</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("%"))}>%</button></td>
+        <td><button onClick={() => setResult(0)}>DEL</button></td>
+      </tr>  
+      <tr>
+        <td><button onClick={() => setInput(input + "7")}>7</button></td>
+        <td><button onClick={() => setInput(input + "8")}>8</button></td>
+        <td><button onClick={() => setInput(input + "9")}>9</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("x"))}>x</button></td>
+      </tr>
+      <tr>
+        <td><button onClick={() => setInput(input + "4")}>4</button></td>
+        <td><button onClick={() => setInput(input + "5")}>5</button></td>
+        <td><button onClick={() => setInput(input + "6")}>6</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("-"))}>-</button></td>
+      </tr>
+      <tr>
+        <td><button onClick={() => setInput(input + "1")}>1</button></td>
+        <td><button onClick={() => setInput(input + "2")}>2</button></td>
+        <td><button onClick={() => setInput(input + "3")}>3</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("+"))}>+</button></td>
+      </tr>
+      <tr>
+        <td><button onClick={() => setInput(input + "0")}>0</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("."))}>.</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("="))}>=</button></td>
+        <td><button onClick={() => setFormulae(formulae.concat(input).concat("/"))}>/</button></td>
+      </tr>
+    </table>
   );
 }
 

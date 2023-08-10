@@ -4,3 +4,8 @@ table, th, td {
   width: 25%;
   justify-content: center;
 }
+
+button {
+  width: 100%;
+  height: 5vh;
+}
